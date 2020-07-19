@@ -1,0 +1,79 @@
+$icon-sizer:45px;
+#contacts{
+  display:table;
+  width: 100%;
+  height:100vh;
+  padding: 108px 0 0;
+  h1{
+    font-size: 48px;
+    padding-bottom: 20px;
+  }
+  .info{
+    background: $white;
+    color: $black;
+    width: 50%;
+    display: table-cell;
+    vertical-align: middle;
+    height:100%;
+    overflow-y: auto;
+    .info-wrapper {
+      padding: 0 5%;
+      overflow: hidden;
+    }
+    .contactItem{
+      padding: 10px 0 10px ($icon-sizer + 5px);
+      margin-bottom: 20px;
+      .contacts-ico{
+        &.icon-email{
+          font-size: 22px;
+        }
+        font-size: 38px;
+        width: $icon-sizer;
+        height: $icon-sizer;
+        line-height: $icon-sizer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+      }
+    }
+    .contacts-container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100%;
+      .contacts-block {
+        padding-right: 2vw;
+      }
+    }
+  }
+  .map-this-to-center {
+    cursor: pointer;
+  }
+  #map{
+    display: table-cell;
+    width: 50%;
+    height:100%;
+  }
+}
+
+@media screen {
+  @media (max-width: 1080px) {
+    #contacts {
+      display: block;
+      height: auto;
+      min-height: 100vh;
+      padding-top: 49px;
+      .info {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      #map {
+        display: block;
+        width: 100%;
+        height: 70vh;
+      }
+    }
+  }
+}

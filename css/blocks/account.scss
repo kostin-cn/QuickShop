@@ -1,0 +1,34 @@
+.site-request-password-reset, .site-reset-password, .site-signup, .personal {
+  padding: 108px 0 56px;
+  .shadowed {
+    margin: 40px;
+    box-shadow: 0 0 6px rgba(0,0,0,.5);
+  }
+  #cart {
+    padding-top: 0;
+  }
+  .form-group {
+    .form-control {
+      border-radius: 0;
+      border: none;
+      background-color: $greyfield;
+      box-shadow: none;
+    }
+  }
+  @media screen {
+    @media (max-width: 1080px) {
+      padding-top: 49px;
+      h1 {
+        font-size: 32px;
+      }
+    }
+    @media (max-width: 500px) {
+      padding-bottom: 97px;
+    }
+  }
+}
+.site-login {
+  a {
+    text-decoration: underline;
+  }
+}

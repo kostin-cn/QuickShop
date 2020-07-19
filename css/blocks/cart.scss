@@ -1,0 +1,237 @@
+#cart {
+  padding: 108px 0 58px;
+  .text-center {
+    text-align: center;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .item-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 20px 0;
+    .col-sm-4 {
+      width: 33.33333%;
+    }
+    .col-sm-3 {
+      width: 25%;
+    }
+    .col-sm-2 {
+      width: 16.66666%;
+    }
+  }
+  .item-head {
+    padding: 10px 0;
+    background-color: lightgrey;
+  }
+  .item-info {
+    padding: 10px 0;
+    border-bottom: 1px solid lightgrey;
+  }
+  .title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .image-block {
+    display: inline-block;
+    width: 100px;
+    line-height: 100px;
+    margin-right: 20px;
+    .image {
+      padding: 35% 50%;
+      background: center no-repeat;
+      background-size: contain;
+    }
+  }
+  .cost-total {
+    font-size: 20px;
+    font-weight: 400;
+    .rur-green {
+      display: inline-block;
+      margin-top: -4px;
+      width: 12px;
+    }
+  }
+  .text-total-green {
+    font-size: 24px;
+    color: $black;
+  }
+  .text-total-red {
+    font-size: 24px;
+    color: red;
+  }
+  .min-cost {
+    padding: 10px 0;
+    .rur {
+      margin-top: -2px;
+      width: 9px;
+    }
+  }
+  .cart-btn-bottom {
+    font-weight: 400;
+    .cart-btn {
+      padding-right: 40px;
+      .cart-btn-text {
+        //text-decoration: underline;
+        text-transform: uppercase;
+        border-bottom: 1px solid $black;
+      }
+      .btn-cart-clear {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+      }
+      a {
+        display: inline-block;
+        padding: 10px 0;
+        text-decoration: none;
+        color: $black;
+      }
+    }
+  }
+}
+#cartPopUp{
+  z-index: 3;
+  position: fixed;
+  top: 138px;
+  right: 2.5%;
+  background: $black;
+  color:white;
+  padding:20px;
+  @include translateY(-150%);
+  @include transition();
+  &.active{
+    @include translateY(0);
+  }
+}
+#cartData{
+  width:100%;
+}
+#cartClose{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 12px;
+  height: 12px;
+  font-size:16px;
+  font-weight: 700;
+  z-index: 100000;
+  cursor: pointer;
+  &:before, &:after {
+    display: block;
+    position: absolute;
+    left: 5px;
+    content: '';
+    height: 13px;
+    width: 2px;
+    background-color: $white;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+#cartRender {
+  .cartItem {
+    .itemImage {
+      display: inline-block;
+      float: left;
+      width: 100px;
+      padding-bottom: 70px;
+      margin-right: 10px;
+      background: center no-repeat;
+      background-size: cover;
+    }
+    .itemDesc {
+      display: inline-block;
+    }
+  }
+}
+.circle {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 22px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid $black;
+  color: $black;
+  font-size: 12px;
+  @include transition();
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+  &.bordered-black {
+    background-color: $black;
+    border-color: $white;
+    color: $white;
+  }
+  &.bordered-red {
+    background-color: red;
+    border-color: $white;
+    color: $white;
+  }
+  &.cart-update {
+    cursor: pointer;
+  }
+  &.cart-item-quantity {
+    border: 1px solid $black;
+    background-color: $black;
+    color: $white;
+  }
+  span {
+    padding: 0;
+    line-height: 22px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+}
+
+@media screen {
+  @media (max-width: 1080px) {
+    #cart {
+      padding-top: 69px;
+    }
+    #cartPopUp {
+      top: 69px;
+    }
+    @media (orientation: landscape) {
+
+    }
+  }
+  @media (max-width: 500px) {
+    #cart {
+      padding-bottom: 97px;
+      .item-head {
+        display: none;
+      }
+      .item-row {
+        //flex-direction: column;
+        .col-sm-4, .col-sm-3, .col-sm-2 {
+          width: 100%;
+        }
+        .count {
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+        }
+        &.order-summary {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}
